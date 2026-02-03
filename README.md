@@ -56,3 +56,57 @@ This helps users quickly focus on **key skills, technologies, and priorities**.
 
 ## 📁 Project Structure
 
+📦public
+ ┣ 📂css
+ ┃ ┗ 📜styles.css
+ ┣ 📂images
+ ┃ ┗ 📜freqlabs-icon.png
+ ┗ 📂js
+ ┃ ┗ 📜script.js
+📦src
+ ┣ 📂controllers
+ ┃ ┗ 📜analyzer.controller.ts
+ ┣ 📂interface
+ ┃ ┗ 📜model.interface.ts
+ ┣ 📂middleware
+ ┃ ┣ 📜error.middleware.ts
+ ┃ ┗ 📜validateText.middleware.ts
+ ┣ 📂routes
+ ┃ ┗ 📜routes.ts
+ ┣ 📂services
+ ┃ ┗ 📜extract-keywords.service.ts
+ ┣ 📂utils
+ ┃ ┣ 📜app-error.util.ts
+ ┃ ┗ 📜stop-words.util.ts
+ ┣ 📂views
+ ┃ ┗ 📜index.ejs
+ ┗ 📜index.ts
+
+ 
+---
+
+## 🚀 API Endpoint
+
+### Render Page
+GET /
+
+### Analyze Text
+POST /api/analyze-text
+
+#### Request Body
+```json
+{
+  "text": "Paste job description or company content here"
+}
+
+Response (Example)
+
+{
+  "totalWords": 1240,
+  "uniqueWords": 210,
+  "keywords": [
+    { "word": "angular", "count": 14 },
+    { "word": "nestjs", "count": 9 },
+    { "word": "api", "count": 7 }
+  ]
+}
