@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Text Focus Analyzer</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- HEADER -->
+        <header class="header">
+            <h1>Text Focus Analyzer</h1>
+            <p>
+                Paste a job description or company content to instantly see
+                what the text emphasizes the most.
+            </p>
+        </header>
+
+        <!-- INPUT CARD -->
+        <section class="card">
+            <form method="POST" action="/api/analyze-text">
+                <label for="text">Input Text</label>
+
+                <textarea id="text" name="text" placeholder="Paste job description or company website content here..."
+                    required></textarea>
+
+                <button type="submit">Analyze Text</button>
+            </form>
+        </section>
+
+        <!-- RESULT CARD -->
+        <% if (keywords && keywords.length) { %>
+            <section class="card">
+                <h2>Frequently Used Words</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Word</th>
+                            <th>Frequency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% keywords.forEach(item=> { %>
+                            <tr>
+                                <td class="word">
+                                    <%= item.word %>
+                                </td>
+                                <td>
+                                    <%= item.count %>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </section>
+            <% } %>
+
+    </main>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
