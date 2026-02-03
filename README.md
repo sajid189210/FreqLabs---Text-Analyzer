@@ -55,7 +55,7 @@ This helps users quickly focus on **key skills, technologies, and priorities**.
 ---
 
 ## 📁 Project Structure
-
+```json
 📦public
  ┣ 📂css
  ┃ ┗ 📜styles.css
